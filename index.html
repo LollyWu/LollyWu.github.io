@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Pages 教学指南</title>
+    <!-- 引入适合瑞士风格的字体 -->
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <style>
+        :root {
+            --primary-color: #000;
+            --bg-color: #ffffff;
+            --text-color: #1d1d1f;
+            --accent-color: #0066cc;
+            --spacing: 2rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', "Noto Sans SC", -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            padding: var(--spacing);
+        }
+
+        /* 响应式容器布局 */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        header {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -0.05em;
+            text-transform: uppercase;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        /* 响应式核心：媒体查询 */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .hero-grid { grid-template-columns: 1fr; }
+            body { padding: 1rem; }
+        }
+
+        .card {
+            border: 1px solid #e5e5e5;
+            padding: 2rem;
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            border-color: var(--primary-color);
+        }
+
+        .step-number {
+            font-size: 0.8rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--accent-color);
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 0.2rem 0.4rem;
+            font-family: 'SFMono-Regular', Consolas, monospace;
+            font-size: 0.9em;
+        }
+
+        .demo-box {
+            background: #000;
+            color: #fff;
+            padding: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        footer {
+            margin-top: 5rem;
+            font-size: 0.8rem;
+            text-align: center;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Deploy.</h1>
+        <p>GitHub Pages 与响应式网页设计入门</p>
+    </header>
+
+    <main>
+        <!-- 介绍部分 -->
+        <section class="hero-grid">
+            <div>
+                <h2>什么是 GitHub Pages?</h2>
+                <p>GitHub Pages 是一项静态站点托管服务，它直接从 GitHub 上的仓库获取 HTML、CSS 和 JavaScript 文件并发布网站。</p>
+            </div>
+            <div class="demo-box">
+                <p>// 优势</p>
+                <ul>
+                    <li>完全免费</li>
+                    <li>自定义域名支持</li>
+                    <li>自动化部署 (GitHub Actions)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 教学步骤 -->
+        <h2 style="margin-bottom: 1.5rem;">快速上手步骤</h2>
+        <div class="hero-grid">
+            <div class="card">
+                <span class="step-number">STEP 01</span>
+                <h3>创建仓库</h3>
+                <p>在 GitHub 上新建一个名为 <code>username.github.io</code> 的仓库（将 username 替换为你的 GitHub 用户名）。</p>
+            </div>
+            <div class="card">
+                <span class="step-number">STEP 02</span>
+                <h3>上传文件</h3>
+                <p>将你的 <code>index.html</code> 提交并推送（Push）到该仓库的 <code>main</code> 分支。</p>
+            </div>
+            <div class="card">
+                <span class="step-number">STEP 03</span>
+                <h3>开启服务</h3>
+                <p>进入仓库的 <b>Settings > Pages</b>，确保 Source 设置为 "Deploy from a branch" 并选择主分支。</p>
+            </div>
+            <div class="card">
+                <span class="step-number">STEP 04</span>
+                <h3>即刻访问</h3>
+                <p>几分钟后，你的网站将通过 <code>https://username.github.io</code> 公开发布。</p>
+            </div>
+        </div>
+
+        <!-- 响应式原理 -->
+        <section style="background: #f9f9f9; padding: 2rem; margin-top: 2rem;">
+            <h2>响应式布局 (Responsive Design)</h2>
+            <p>为了让网页在手机、平板和桌面端都有良好表现，我们使用了以下关键技术：</p>
+            <ul style="margin-left: 1.5rem; margin-top: 1rem;">
+                <li><strong>Viewport Meta:</strong> 告诉浏览器按照设备的宽度渲染。</li>
+                <li><strong>CSS Grid / Flexbox:</strong> 动态调整元素排列。</li>
+                <li><strong>Media Queries:</strong> 针对不同屏幕尺寸应用不同样式。</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 基于 Vibe Coding 理念设计</p>
+    </footer>
+</div>
+
+</body>
+</html>
